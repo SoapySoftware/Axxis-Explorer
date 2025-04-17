@@ -10,10 +10,6 @@ namespace Axxis_Explorer_Helper
     {
         static int Main(string[] args)
         {
-
-            bool bEx = File.Exists(@"c:\windows\regedit.exe /f");
-            string strFile = Path.GetFileName(@"c:\windows\regedit.exe /f");
-
             try
             {
                 NativeMessaging.Host host = new NativeMessaging.Host();
