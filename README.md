@@ -8,6 +8,10 @@ This repository contains the code to compile and install a Windows application t
 - Built on the .NET 4.7.2 platform
 - Prevents loading files with unsafe extensions (.exe, .bat, etc.)
 
+## Download
+
+Download a copy of the installer at [https://www.soapysoftware.com/axxis/Axxis Explorer Installer.msi](https://www.soapysoftware.com/axxis/Axxis Explorer Installer.msi)
+
 ## References
 
 https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging
