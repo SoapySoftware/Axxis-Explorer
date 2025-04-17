@@ -10,7 +10,7 @@ This repository contains the code to compile and install a Windows application t
 
 ## Download
 
-Download a copy of the installer at [https://www.soapysoftware.com/axxis/Axxis Explorer Installer.msi](https://www.soapysoftware.com/axxis/Axxis Explorer Installer.msi)
+Download a copy of the installer at [https://www.soapysoftware.com/axxis/Axxis Explorer Installer.msi](https://www.soapysoftware.com/axxis/Axxis%20Explorer%20Installer.msi)
 
 ## References
 
