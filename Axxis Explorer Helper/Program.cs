@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-
-namespace Axxis_Explorer_Helper
+﻿namespace Axxis_Explorer_Helper
 {
     internal class Program
     {

@@ -1,12 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
 using System.IO;
-using System.Xml;
 using System;
 using System.Diagnostics;
 using System.Linq;
-using System.Web;
 
 namespace NativeMessaging
 {
