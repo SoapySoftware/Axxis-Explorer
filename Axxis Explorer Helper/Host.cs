@@ -93,40 +93,57 @@ namespace NativeMessaging
         {
             try
             {
-                string strPath = data.GetValue("path").ToString();
+                string strType = data.GetValue("type").ToString();
 
-                if (File.Exists(strPath))
+                if(strType == "openLocalFile")
                 {
-                    // Note: strExt includes the "." at the front of the string.
-                    // If a file has no extension, strExt is empty.
-                    string strExt = Path.GetExtension(strPath);
+                    string strPath = data.GetValue("path").ToString();
 
-                    if ((new string[] { ".BAT", ".BIN", ".CAB", ".CMD", ".COM", ".CPL", ".EX_", ".EXE", ".GADGET", ".INF1", ".INS", ".INX", ".ISU", ".JOB", ".JSE", ".LNK", ".MSC", ".MSI", ".MSP", ".MST",
-                    ".PAF", ".PIF", ".PS1", ".REG", ".RGS", ".SCR", ".SCT", ".SHB", ".SHS", ".U3P", ".VB", ".VBE", ".VBS", ".VBSCRIPT", ".WS", ".WSF", ".WSH" }).Contains(strExt.ToUpper()))
+                    if (File.Exists(strPath))
                     {
-                        data.status = "error";
-                        data.message = "File exists, but is blocked for security";
+                        // Note: strExt includes the "." at the front of the string.
+                        // If a file has no extension, strExt is empty.
+                        string strExt = Path.GetExtension(strPath);
+
+                        if ((new string[] { ".BAT", ".BIN", ".CAB", ".CMD", ".COM", ".CPL", ".EX_", ".EXE", ".GADGET", ".INF1", ".INS", ".INX", ".ISU", ".JOB", ".JSE", ".LNK", ".MSC", ".MSI", ".MSP", ".MST",
+                    ".PAF", ".PIF", ".PS1", ".REG", ".RGS", ".SCR", ".SCT", ".SHB", ".SHS", ".U3P", ".VB", ".VBE", ".VBS", ".VBSCRIPT", ".WS", ".WSF", ".WSH" }).Contains(strExt.ToUpper()))
+                        {
+                            data.status = "error";
+                            data.message = "File exists, but is blocked for security";
+                        }
+                        else
+                        {
+                            Process.Start(strPath);
+                            data.status = "success";
+                            data.message = "Opening file";
+                        }
+
+                    }
+                    else if (Directory.Exists(strPath))
+                    {
+                        strPath = strPath.Replace("/", "\\").Replace("\\\\", "\\");
+                        Process.Start("explorer.exe", "/open, \"" + strPath + "\"");
+                        data.status = "success";
+                        data.message = "Opening folder";
                     }
                     else
                     {
-                        Process.Start(strPath);
-                        data.status = "success";
-                        data.message = "Opening file";
+                        data.status = "error";
+                        data.message = "Path does not exist";
                     }
-
                 }
-                else if (Directory.Exists(strPath))
+                else if(strType == "checkInstalled")
                 {
-                    strPath = strPath.Replace("/", "\\").Replace("\\\\", "\\");
-                    Process.Start("explorer.exe", "/open, \"" + strPath + "\"");
                     data.status = "success";
-                    data.message = "Opening folder";
+                    data.message = "Communication with native application succeeded";
                 }
                 else
                 {
                     data.status = "error";
-                    data.message = "Path does not exist";
+                    data.message = "Unknown message type";
                 }
+
+
             }
             catch (Exception ex)
             {

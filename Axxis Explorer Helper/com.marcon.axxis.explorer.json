@@ -3,5 +3,7 @@
   "description": "Helper application to open files using the Windows explorer using the Chrome native messaging protocol",
   "path": "Axxis Explorer Helper.exe",
   "type": "stdio",
-  "allowed_origins": [ "chrome-extension://eabmihgoifcdmmhlnihcfdpopfcnleao/" ]
+  "allowed_origins_prod": [ "chrome-extension://akpdmlbkeaohjlkpkecdnbepeihkpepa/" ],
+  "allowed_origins_dev": [ "chrome-extension://eabmihgoifcdmmhlnihcfdpopfcnleao/" ],
+  "allowed_origins": [ "chrome-extension://akpdmlbkeaohjlkpkecdnbepeihkpepa/" ]
 }
