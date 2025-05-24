@@ -3,6 +3,21 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# production
+/Chrome Extension/build
+/Chrome Extension/node_modules
+/Chrome Extension/release
+/Firefox Addon/build
+/Firefox Addon/node_modules
+/Firefox Addon/release
+
+# misc
+.DS_Store
+npm-debug.log*
+
 # User-specific files
 *.rsuser
 *.suo

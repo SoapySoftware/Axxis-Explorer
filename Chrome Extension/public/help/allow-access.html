@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axxis Explorer Help</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <style>
+      .logo {
+        width: 100px;
+      }
+      li {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 my-3">
+          <img class="logo" src="../axxis-logo.png" alt="axxis" />
+        </div>
+        <hr />
+        <div class="col-12">
+          <h1 id="Allow_local_file_URLs">
+            Help: Configure extension to allow local file URLs
+          </h1>
+          <p class="lead">This setting must be manually configured.</p>
+          <p>Please follow the instructions below:</p>
+          <ol>
+            <li>
+              Type <code>chrome://extensions</code> into the address bar and
+              press enter
+            </li>
+            <li>
+              Find the Axxis Explorer extension, and press <code>Details</code
+              ><br /><img
+                class="img-fluid"
+                src="screen-extension-details.png"
+                alt="Screenshot showing location of details button"
+              />
+            </li>
+            <li>
+              Scroll down, and enable <code>Allow access to file URLs</code
+              ><br /><img
+                class="img-fluid"
+                src="screen-extension-urls.png"
+                alt="Screenshot showing location option to allow access to file URLs"
+              />
+            </li>
+            <li>Restart Chrome</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script src="../bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axxis Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div><img class="logo" src="axxis-logo.png" alt="axxis" /></div>
+      <h4 class="mt-3">Extension configuration</h4>
+      <div>
+        Helper app installed:
+        <span id="txtStatusApp" class="text-muted">Checking...</span>
+      </div>
+      <div>
+        Allow access to file URLs:
+        <span id="txtStatusFileUrls" class="text-muted">Checking...</span>
+      </div>
+    </div>
+
+    <script src="bootstrap.min.js"></script>
+    <script src="popup.js"></script>
+
+    <!--
+      This HTML file opens when you click on icon from the toolbar.
+
+      To begin the development, run `npm run watch`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>

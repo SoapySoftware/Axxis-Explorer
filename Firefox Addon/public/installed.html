@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axxis Explorer Installation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <style>
+      .logo {
+        width: 100px;
+      }
+      li {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    </style>
+  </head>
+  <body class="p-4">
+    <div class="container d-flex flex-row align-items-center">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <img class="img-fluid" src="axxis-logo.png" alt="axxis" />
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-start">
+          <p class="display-5">
+            Nice! You just installed the Axxis Explorer extension.
+          </p>
+          <p>
+            This will allow you to seamlessly open files on the network drive
+            while using axxis.
+          </p>
+        </div>
+        <div class="col-md-2 d-none d-md-block"></div>
+        <div class="col-12 col-md-8">
+          <div class="border-bottom my-3 some-requirements-missing d-none">
+            <h3>Next steps</h3>
+          </div>
+          <ol>
+            <li class="access-required d-none">
+              Open a new tab, and type <code>about:addons</code> into the
+              address bar and press enter
+            </li>
+            <li class="access-required d-none">
+              Find the Axxis Explorer extension, and press <code>Details</code
+              ><br /><img
+                class="img-fluid"
+                src="screen-extension-details.png"
+                alt="Screenshot showing location of details button"
+              />
+            </li>
+            <li class="access-required d-none">
+              Scroll down, and enable <code>Allow access to file URLs</code
+              ><br /><img
+                class="img-fluid"
+                src="screen-extension-urls.png"
+                alt="Screenshot showing location option to allow access to file URLs"
+              />
+            </li>
+            <li class="native-app-required d-none">
+              <a href="https://axx.is/Axxis%20Explorer%20Installer.msi"
+                >Download</a
+              >
+              the latest helper application
+            </li>
+            <li class="native-app-required d-none">
+              Run the installer <code>Axxis Explorer Installer.msi</code>
+              <ol type="a">
+                <li>
+                  You will need to confirm that you have admin rights for the
+                  installer to run
+                </li>
+                <li>Use the default settings during the installer setup</li>
+              </ol>
+            </li>
+            <li class="access-required d-none">Restart Firefox</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script src="bootstrap.min.js"></script>
+    <script src="checkRequirements.js"></script>
+  </body>
+</html>

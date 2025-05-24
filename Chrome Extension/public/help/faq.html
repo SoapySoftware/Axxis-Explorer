@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axxis Explorer Help</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <style>
+      .logo {
+        width: 100px;
+      }
+      li {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 my-3">
+          <img class="logo" src="../axxis-logo.png" alt="axxis" />
+        </div>
+        <hr />
+        <div class="col-12">
+          <h1>Help: Windows helper application not properly installed</h1>
+          <p class="lead">
+            The helper application is required for the extension to function
+            properly. Currently, the helper application is only available for
+            machines running Microsoft Windows.
+          </p>
+          <p>Please follow the instructions below:</p>
+          <ol>
+            <li>
+              <a
+                href="https://marconmetalfab.com/axxis.dev/Axxis%20Explorer%20Installer.msi"
+                >Download</a
+              >
+              the latest helper application
+            </li>
+            <li>
+              Run the installer <code>Axxis Explorer Installer.msi</code>
+              <ol type="a">
+                <li>
+                  You will need to confirm that you have admin rights for the
+                  installer to run
+                </li>
+                <li>Use the default settings during the installer setup</li>
+              </ol>
+            </li>
+            <li>
+              Ensure that the extension is set up to allow local file URLs (<a
+                href="#Allow_local_file_URLs"
+                >instructions</a
+              >)
+            </li>
+            <li>Restart Chrome</li>
+          </ol>
+        </div>
+        <hr />
+        <div class="col-12">
+          <h1 id="Allow_local_file_URLs">
+            Help: Configure extension to allow local file URLs
+          </h1>
+          <p class="lead">This setting must be manually configured.</p>
+          <p>Please follow the instructions below:</p>
+          <ol>
+            <li>
+              Type <code>chrome://extensions</code> into the address bar and
+              press enter
+            </li>
+            <li>
+              Find the Axxis Explorer extension, and press <code>Details</code
+              ><br /><img
+                class="img-fluid"
+                src="screen-extension-details.png"
+                alt="Screenshot showing location of details button"
+              />
+            </li>
+            <li>
+              Scroll down, and enable <code>Allow access to file URLs</code
+              ><br /><img
+                class="img-fluid"
+                src="screen-extension-urls.png"
+                alt="Screenshot showing location option to allow access to file URLs"
+              />
+            </li>
+            <li>Restart Chrome</li>
+          </ol>
+        </div>
+        <hr />
+        <div class="col-12">
+          <h1>Help: When clicking a local file link, multiple tabs open</h1>
+          <p class="lead">
+            Most likely you have multiple extensions installed that are
+            performing similar actions.
+          </p>
+          <p>
+            Please follow the instructions below to disable other applications:
+          </p>
+          <ol>
+            <li>
+              Type <code>chrome://extensions</code> into the address bar and
+              press enter
+            </li>
+            <li>
+              Find any conflicting extensions, and disable them. For example,
+              <code>Enable local file links</code> and
+              <code>Local Explorer</code> <br /><img
+                class="img-fluid"
+                src="screen-extension-conflicts.png"
+                alt="Screenshot showing location option to disable conflicting extensions"
+              />
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script src="../bootstrap.min.js"></script>
+  </body>
+</html>
