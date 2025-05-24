@@ -1,0 +1,7 @@
+{
+  "name": "com.marcon.axxis.explorer",
+  "description": "Helper application to open files using the Windows explorer using the Firefox native messaging protocol",
+  "path": "Axxis Explorer Helper.exe",
+  "type": "stdio",
+  "allowed_extensions": [ "axxis.explorer@marconmetalfab.com" ]
+}

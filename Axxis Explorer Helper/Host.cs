@@ -95,7 +95,12 @@ namespace NativeMessaging
             {
                 string strType = data.GetValue("type").ToString();
 
-                if(strType == "openLocalFile")
+                string strApplication = "";
+                if (data.ContainsKey("application")) {
+                    strApplication = data.GetValue("application").ToString().ToLower();
+                }
+
+                if (strType == "openLocalFile")
                 {
                     string strPath = data.GetValue("path").ToString();
 
@@ -113,7 +118,29 @@ namespace NativeMessaging
                         }
                         else
                         {
-                            Process.Start(strPath);
+                            // Firefox annoyingly kills any process started in its native messaging protocol
+                            // once the native messaging host exits. This is a workaround to start the process untethered.
+                            if (strApplication == "firefox")
+                            {
+
+                                string strExe = ApplicationLocator.GetAppFromExtension(strExt);
+                                string strRun = strExe + " \"" + strPath + "\"";
+                                data.run = strRun;
+                                NativeProcess.Start(strRun);
+                                                              
+                            }
+                            else
+                            {
+                                var startInfo = new ProcessStartInfo
+                                {
+                                    FileName = strPath,
+                                    CreateNoWindow = true
+                                };
+                                var process = Process.Start(strPath);
+                                //process.WaitForExit();
+
+                            }                            
+
                             data.status = "success";
                             data.message = "Opening file";
                         }
@@ -122,7 +149,25 @@ namespace NativeMessaging
                     else if (Directory.Exists(strPath))
                     {
                         strPath = strPath.Replace("/", "\\").Replace("\\\\", "\\");
-                        Process.Start("explorer.exe", "/open, \"" + strPath + "\"");
+
+                        // Based on docs, the /separate flag means that it should start untethered, so Firefox will be supported
+                        var startInfo = new ProcessStartInfo
+                        {
+                            FileName = "explorer.exe",
+                            Arguments = "/separate, \"" + strPath + "\"",
+                            CreateNoWindow = true
+                        };
+
+                        var process = Process.Start(startInfo);
+                        if(strApplication == "firefox")
+                        {
+                            process.WaitForExit();
+                        }
+                        
+
+                        // For firefox, in case the /separate flag doesn't work.
+                        //NativeProcess.Start("explorer.exe /separate, \"" + strPath + "\"");
+
                         data.status = "success";
                         data.message = "Opening folder";
                     }

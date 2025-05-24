@@ -6,4 +6,5 @@
   "allowed_origins_prod": [ "chrome-extension://akpdmlbkeaohjlkpkecdnbepeihkpepa/" ],
   "allowed_origins_dev": [ "chrome-extension://eabmihgoifcdmmhlnihcfdpopfcnleao/" ],
   "allowed_origins": [ "chrome-extension://akpdmlbkeaohjlkpkecdnbepeihkpepa/" ]
+
 }

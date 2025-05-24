@@ -89,16 +89,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationLocator.cs" />
     <Compile Include="Host.cs" />
+    <Compile Include="NativeProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="com.marcon.axxis.explorer.json">
+    <Content Include="com.marcon.axxis.explorer.chrome.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Axxis Explorer Helper_TemporaryKey.pfx" />
+    <Content Include="com.marcon.axxis.explorer.firefox.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="com.marcon.axxis.explorer.edge.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
   </ItemGroup>
