@@ -46,6 +46,8 @@ chrome.runtime.onMessageExternal.addListener(
         request.localFilePermission = result;
         sendResponse(request);
       });
+
+      return true;
     } else {
       console.log('External request type unsupported (background.js)');
       request.status = 'error';
